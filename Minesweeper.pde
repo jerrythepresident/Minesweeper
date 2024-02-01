@@ -1,5 +1,3 @@
-
-
 import de.bezier.guido.*;
 //Declare and initialize NUM_ROWS and NUM_COLS = 30
 public final static int NUM_ROWS=30;
