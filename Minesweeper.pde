@@ -9,7 +9,7 @@ private ArrayList <MSButton> bombs=new ArrayList <MSButton>(); //ArrayList of ju
 
 void setup()
 {
-    size(400, 400);
+    size(600, 600);
     textAlign(CENTER,CENTER);
     
     // make the manager
@@ -18,7 +18,7 @@ void setup()
     for(int row=0;row<NUM_ROWS;row++)
         for(int col=0;col<NUM_COLS;col++)
             buttons[row][col]=new MSButton(row,col);
-    for(int i=0;i<20;i++)    
+    for(int i=0;i<30;i++)    
         setBombs();
 }
 public void setBombs()
@@ -31,7 +31,7 @@ public void setBombs()
 
 public void draw ()
 {
-    background( 0 );
+    background(0);
     if(isWon())
         displayWinningMessage();
     
@@ -87,8 +87,8 @@ public class MSButton
     
     public MSButton ( int rr, int cc )
     {
-        width = 400/NUM_COLS;
-        height = 400/NUM_ROWS;
+        width = 600/NUM_COLS;
+        height = 600/NUM_ROWS;
         r = rr;
         c = cc; 
         x = c*width;
@@ -174,12 +174,12 @@ public class MSButton
     {    
         if (marked)
             fill(0);
-        else if( clicked && bombs.contains(this) ) 
+        else if(clicked && bombs.contains(this)) 
             fill(255,0,0);
         else if(clicked)
-            fill( 200 );
+            fill(200);
         else 
-            fill( 100 );
+            fill(100);
 
         rect(x, y, width, height);
         fill(0);
