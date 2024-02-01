@@ -7,7 +7,7 @@ private ArrayList <MSButton> bombs=new ArrayList <MSButton>(); //ArrayList of ju
 
 void setup()
 {
-    size(600, 600);
+    size(1000, 1000);
     textAlign(CENTER,CENTER);
     
     // make the manager
@@ -85,8 +85,8 @@ public class MSButton
     
     public MSButton ( int rr, int cc )
     {
-        width = 600/NUM_COLS;
-        height = 600/NUM_ROWS;
+        width = 1000/NUM_COLS;
+        height = 1000/NUM_ROWS;
         r = rr;
         c = cc; 
         x = c*width;
