@@ -1,9 +1,9 @@
 
 
 import de.bezier.guido.*;
-//Declare and initialize NUM_ROWS and NUM_COLS = 20
-public final static int NUM_ROWS=20;
-public final static int NUM_COLS=20;
+//Declare and initialize NUM_ROWS and NUM_COLS = 30
+public final static int NUM_ROWS=30;
+public final static int NUM_COLS=30;
 private MSButton[][] buttons; //2d array of minesweeper buttons
 private ArrayList <MSButton> bombs=new ArrayList <MSButton>(); //ArrayList of just the minesweeper buttons that are mined
 
@@ -53,28 +53,28 @@ public void displayLosingMessage()
     for(int i=0;i<bombs.size();i++)
         if(bombs.get(i).isClicked()==false)
             bombs.get(i).mousePressed();
-        buttons[11][6].setLabel("Y");
-        buttons[11][7].setLabel("O");
-        buttons[11][8].setLabel("U");
-        buttons[11][9].setLabel(" ");
-        buttons[11][10].setLabel("L");
-        buttons[11][11].setLabel("O");
-        buttons[11][12].setLabel("S");
-        buttons[11][13].setLabel("E");
-        buttons[11][14].setLabel("!");
+        buttons[16][11].setLabel("Y");
+        buttons[16][12].setLabel("O");
+        buttons[16][13].setLabel("U");
+        buttons[16][14].setLabel(" ");
+        buttons[16][15].setLabel("L");
+        buttons[16][16].setLabel("O");
+        buttons[16][17].setLabel("S");
+        buttons[16][18].setLabel("E");
+        buttons[16][19].setLabel("!");
 }
 public void displayWinningMessage()
 {
     if(isWon()==true)
     {
-        buttons[11][6].setLabel("Y");
-        buttons[11][7].setLabel("O");
-        buttons[11][8].setLabel("U");
-        buttons[11][9].setLabel(" ");
-        buttons[11][10].setLabel("W");
-        buttons[11][11].setLabel("I");
-        buttons[11][12].setLabel("N");
-        buttons[11][13].setLabel("!");
+        buttons[16][11].setLabel("Y");
+        buttons[16][12].setLabel("O");
+        buttons[16][13].setLabel("U");
+        buttons[16][14].setLabel(" ");
+        buttons[16][15].setLabel("W");
+        buttons[16][16].setLabel("I");
+        buttons[16][17].setLabel("N");
+        buttons[16][18].setLabel("!");
     }
 }   
 
