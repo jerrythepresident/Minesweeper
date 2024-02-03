@@ -11,7 +11,7 @@ void setup()
     textAlign(CENTER,CENTER);
     
     // make the manager
-    Interactive.make( this );
+    Interactive.make(this);
     buttons = new MSButton [NUM_ROWS][NUM_COLS];
     for(int row=0;row<NUM_ROWS;row++)
         for(int col=0;col<NUM_COLS;col++)
@@ -32,8 +32,8 @@ public void draw ()
     background(0);
     if(isWon())
         displayWinningMessage();
-    
 }
+
 public boolean isWon()
 {
     for(int r=0;r<NUM_ROWS;r++)
@@ -46,11 +46,12 @@ public boolean isWon()
         }
     return true;
 }
+
 public void displayLosingMessage()
 {
     for(int i=0;i<bombs.size();i++)
         if(bombs.get(i).isClicked()==false)
-            bombs.get(i).mousePressed();
+        bombs.get(i).mousePressed();
         buttons[16][11].setLabel("Y");
         buttons[16][12].setLabel("O");
         buttons[16][13].setLabel("U");
@@ -61,6 +62,7 @@ public void displayLosingMessage()
         buttons[16][18].setLabel("E");
         buttons[16][19].setLabel("!");
 }
+
 public void displayWinningMessage()
 {
     if(isWon()==true)
