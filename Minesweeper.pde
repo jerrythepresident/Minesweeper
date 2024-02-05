@@ -7,7 +7,7 @@ int tileCount = 0;
 
 void setup ()
 {
-    size(900, 900);
+    size(400, 400);
     textAlign(CENTER,CENTER);
     buttons = new MSButton[rows][columns];
     bombs = new ArrayList <MSButton>();
@@ -92,8 +92,8 @@ public class MSButton
     private String label;   
     public MSButton (int rr, int cc)
     {
-        width = 900/columns;
-        height = 900/rows;
+        width = 400/columns;
+        height = 400/rows;
         r = rr;
         c = cc; 
         x = c*width;
@@ -128,14 +128,14 @@ public class MSButton
         else if (countBombs(r,c) > 0) {
           label = ""+countBombs(r,c);
           if (!clicked) {tileCount+=1;}
-          if (tileCount == 900-bombs.size()) {displayWinningMessage();}
+          if (tileCount == 400-bombs.size()) {displayWinningMessage();}
           clicked = true;
         }
         else {
 
           
           if (!clicked) {tileCount+=1;}
-          if (tileCount == 900-bombs.size()) {displayWinningMessage();}
+          if (tileCount == 400-bombs.size()) {displayWinningMessage();}
           clicked = true;
           
           if(isValid(r-1,c-1) && !buttons[r-1][c-1].isClicked()) {
