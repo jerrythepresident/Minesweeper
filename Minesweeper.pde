@@ -21,7 +21,7 @@ void setup ()
 }
 
 public void setBombs()
-{  for (int i = 0; i < 90; i++) {
+{  for (int i = 0; i < 200; i++) {
     final int r1 = (int)(Math.random()*30);
     final int r2 = (int)(Math.random()*30);
     if ((bombs.contains (buttons[r1][r2])) == false) {
