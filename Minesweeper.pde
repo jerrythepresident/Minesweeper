@@ -1,20 +1,19 @@
 private MSButton[][] buttons;
 private ArrayList <MSButton> bombs;
-int rows = 30;
-int columns = 30;
-boolean isLost = false;
-int tileCount = 0;
+private int rows = 30;
+private int columns = 30;
+private boolean isLost = false;
+private int tileCount = 0;
 
 void setup ()
 {
-    size(900, 900);
     textAlign(CENTER,CENTER);
+    size(900, 900);
     buttons = new MSButton[rows][columns];
     bombs = new ArrayList <MSButton>();
-    for(int i = 0;i<columns;i++)
-    {
-        for(int j = 0; j < rows;j++){
-            buttons[j][i]= new MSButton(j,i);
+    for(int j = 0;j<columns;j++){
+        for(int i = 0; i < rows;i++){
+            buttons[i][j]= new MSButton(i,j);
     }
 } 
     setBombs();
