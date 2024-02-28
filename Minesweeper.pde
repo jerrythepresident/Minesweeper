@@ -122,8 +122,8 @@ public class MSButton
           clicked = true;
           LosingMessage();
         }
-        else if (countBombs(r,c) > 0) {
-          label = ""+countBombs(r,c);
+        else if (countbomb(r,c) > 0) {
+          label = ""+countbomb(r,c);
           if (!clicked) {tileCount+=1;}
           if (tileCount == 900-bombs.size()) {WinningMessage();}
           clicked = true;
@@ -157,27 +157,23 @@ public class MSButton
       }
     }
 
-    public void draw () 
-    {    
-      if (marked)
+public void draw () {    
+if (marked)
             fill(0);
-         
          else if( !marked && clicked && bombs.contains(this) ) 
              fill(255,0,0);
          else if( marked && bombs.contains(this) ) 
              fill(100);
-         else if( !marked && clicked && !bombs.contains(this) ) 
+         else if(!marked && clicked && !bombs.contains(this)) 
              fill(200);
-             
         else if(clicked)
-            fill( 200 );
+            fill(200);
         else 
-            fill( 100 );
-
+            fill(100);
         rect(x, y, width, height);
         fill(0);
         text(label,x+width/2,y+height/2);
-    }
+}
 
     public void setLabel(String newLabel)
     {
@@ -190,41 +186,40 @@ public class MSButton
         return false;
     }
 
-    public int countBombs(int row, int col)
-    {
-        int numBombs = 0;
+public int countbomb(int row, int col){
+        int bombnum = 0;
         if (isValid(row-1,col) == true && bombs.contains(buttons[row-1][col]))
         {
-            numBombs++;
+            bombnum++;
         }
         if (isValid(row+1,col) == true && bombs.contains(buttons[row+1][col]))
         {
-            numBombs++;
+            bombnum++;
         }
          if (isValid(row,col-1) == true && bombs.contains(buttons[row][col-1]))
         {
-            numBombs++;
+            bombnum++;
         }
          if (isValid(row,col+1) == true && bombs.contains(buttons[row][col+1]))
         {
-            numBombs++;
+            bombnum++;
         }
          if (isValid(row-1,col+1) == true && bombs.contains(buttons[row-1][col+1]))
         {
-            numBombs++;
+            bombnum++;
         }
          if (isValid(row-1,col-1) == true && bombs.contains(buttons[row-1][col-1]))
         {
-            numBombs++;
+            bombnum++;
         }
          if (isValid(row+1,col+1) == true && bombs.contains(buttons[row+1][col+1]))
         {
-            numBombs++;
+            bombnum++;
         }
          if (isValid(row+1,col-1) == true && bombs.contains(buttons[row+1][col-1]))
         {
-            numBombs++;
+            bombnum++;
         }
-        return numBombs;
+        return bombnum;
     }
 }
