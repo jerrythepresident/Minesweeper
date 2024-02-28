@@ -19,8 +19,8 @@ void setup ()
     setBombs();
 }
 
-public void setBombs()
-{  for (int i = 0; i < 150; i++) {
+public void setBombs(){  
+  for (int i = 0; i < 150; i++) {
     final int r1 = (int)(Math.random()*30);
     final int r2 = (int)(Math.random()*30);
     if ((bombs.contains (buttons[r1][r2])) == false) {
@@ -30,11 +30,10 @@ public void setBombs()
 }
 }
 
-public void draw ()
-{
+public void draw (){
     background(0);
     if(isWon())
-        displayWinningMessage();
+        WinningMessage();
     for (int i = 0; i < rows; i++) {
      for (int j = 0; j < columns; j++) {
         buttons[i][j].draw();
@@ -47,7 +46,7 @@ public boolean isWon()
   return false;
 }
 
-public void displayLosingMessage()
+public void LosingMessage()
 {     
     for(int i=0;i<bombs.size();i++)
         if(bombs.get(i).isClicked()==false)
@@ -63,7 +62,7 @@ public void displayLosingMessage()
     buttons[rows/2][(columns/2+3)].setLabel("E");
 }
 
-public void displayWinningMessage()
+public void WinningMessage()
 {
     isLost = true;
     buttons[rows/2][(columns/2)-4].setLabel("Y");
@@ -121,19 +120,19 @@ public class MSButton
         else if (marked == true) {}
         else if (bombs.contains(this)) {
           clicked = true;
-          displayLosingMessage();
+          LosingMessage();
         }
         else if (countBombs(r,c) > 0) {
           label = ""+countBombs(r,c);
           if (!clicked) {tileCount+=1;}
-          if (tileCount == 900-bombs.size()) {displayWinningMessage();}
+          if (tileCount == 900-bombs.size()) {WinningMessage();}
           clicked = true;
         }
         else {
 
           
           if (!clicked) {tileCount+=1;}
-          if (tileCount == 900-bombs.size()) {displayWinningMessage();}
+          if (tileCount == 900-bombs.size()) {WinningMessage();}
           clicked = true;
           
           if(isValid(r-1,c-1) && !buttons[r-1][c-1].isClicked()) {
